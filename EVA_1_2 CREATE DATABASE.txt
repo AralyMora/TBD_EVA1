@@ -1,0 +1,132 @@
+EVA_1_2 CREATE DATABASE      05-02-2026
+Microsoft Windows [Versión 10.0.26100.6584]
+(c) Microsoft Corporation. Todos los derechos reservados.
+
+C:\Users\Hp>mysqlsh
+MySQL Shell 8.0.44
+
+Copyright (c) 2016, 2025, Oracle and/or its affiliates.
+Oracle is a registered trademark of Oracle Corporation and/or its affiliates.
+Other names may be trademarks of their respective owners.
+
+Type '\help' or '\?' for help; '\quit' to exit.
+ MySQL  JS > \sql
+Switching to SQL mode... Commands end with ;
+ MySQL  SQL > \connect --mc root@localhost
+Creating a Classic session to 'root@localhost'
+Fetching global names for auto-completion... Press ^C to stop.
+Your MySQL connection id is 20
+Server version: 8.0.44 MySQL Community Server - GPL
+No default schema selected; type \use <schema> to set one.
+ MySQL  localhost:3306 ssl  SQL > show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+6 rows in set (0.0012 sec)
+ MySQL  localhost:3306 ssl  SQL > show collation where charset = "utf32";
++----------------------+---------+-----+---------+----------+---------+---------------+
+| Collation            | Charset | Id  | Default | Compiled | Sortlen | Pad_attribute |
++----------------------+---------+-----+---------+----------+---------+---------------+
+| utf32_bin            | utf32   |  61 |         | Yes      |       1 | PAD SPACE     |
+| utf32_croatian_ci    | utf32   | 181 |         | Yes      |       8 | PAD SPACE     |
+| utf32_czech_ci       | utf32   | 170 |         | Yes      |       8 | PAD SPACE     |
+| utf32_danish_ci      | utf32   | 171 |         | Yes      |       8 | PAD SPACE     |
+| utf32_esperanto_ci   | utf32   | 177 |         | Yes      |       8 | PAD SPACE     |
+| utf32_estonian_ci    | utf32   | 166 |         | Yes      |       8 | PAD SPACE     |
+| utf32_general_ci     | utf32   |  60 | Yes     | Yes      |       1 | PAD SPACE     |
+| utf32_german2_ci     | utf32   | 180 |         | Yes      |       8 | PAD SPACE     |
+| utf32_hungarian_ci   | utf32   | 178 |         | Yes      |       8 | PAD SPACE     |
+| utf32_icelandic_ci   | utf32   | 161 |         | Yes      |       8 | PAD SPACE     |
+| utf32_latvian_ci     | utf32   | 162 |         | Yes      |       8 | PAD SPACE     |
+| utf32_lithuanian_ci  | utf32   | 172 |         | Yes      |       8 | PAD SPACE     |
+| utf32_persian_ci     | utf32   | 176 |         | Yes      |       8 | PAD SPACE     |
+| utf32_polish_ci      | utf32   | 165 |         | Yes      |       8 | PAD SPACE     |
+| utf32_romanian_ci    | utf32   | 163 |         | Yes      |       8 | PAD SPACE     |
+| utf32_roman_ci       | utf32   | 175 |         | Yes      |       8 | PAD SPACE     |
+| utf32_sinhala_ci     | utf32   | 179 |         | Yes      |       8 | PAD SPACE     |
+| utf32_slovak_ci      | utf32   | 173 |         | Yes      |       8 | PAD SPACE     |
+| utf32_slovenian_ci   | utf32   | 164 |         | Yes      |       8 | PAD SPACE     |
+| utf32_spanish2_ci    | utf32   | 174 |         | Yes      |       8 | PAD SPACE     |
+| utf32_spanish_ci     | utf32   | 167 |         | Yes      |       8 | PAD SPACE     |
+| utf32_swedish_ci     | utf32   | 168 |         | Yes      |       8 | PAD SPACE     |
+| utf32_turkish_ci     | utf32   | 169 |         | Yes      |       8 | PAD SPACE     |
+| utf32_unicode_520_ci | utf32   | 182 |         | Yes      |       8 | PAD SPACE     |
+| utf32_unicode_ci     | utf32   | 160 |         | Yes      |       8 | PAD SPACE     |
+| utf32_vietnamese_ci  | utf32   | 183 |         | Yes      |       8 | PAD SPACE     |
++----------------------+---------+-----+---------+----------+---------+---------------+
+26 rows in set (0.0012 sec)
+ MySQL  localhost:3306 ssl  SQL > create database prueba;
+Query OK, 1 row affected (0.0147 sec)
+ MySQL  localhost:3306 ssl  SQL > show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| prueba             |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+7 rows in set (0.0010 sec)
+ MySQL  localhost:3306 ssl  SQL > show create database prueba;
++----------+----------------------------------------------------------------------------------------------------------------------------------+
+| Database | Create Database                                                                                                                  |
++----------+----------------------------------------------------------------------------------------------------------------------------------+
+| prueba   | CREATE DATABASE `prueba` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */ |
++----------+----------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.0116 sec)
+ MySQL  localhost:3306 ssl  SQL > use prueba;
+Default schema set to `prueba`.
+Fetching global names, object names from `prueba` for auto-completion... Press ^C to stop.
+ MySQL  localhost:3306 ssl  prueba  SQL > show tables;
+Empty set (0.0018 sec)
+ MySQL  localhost:3306 ssl  prueba  SQL > drop database prueba;
+Query OK, 0 rows affected (0.0169 sec)
+ MySQL  localhost:3306 ssl  prueba  SQL > show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+6 rows in set (0.0010 sec)
+ MySQL  localhost:3306 ssl  prueba  SQL > create database taller1;
+Query OK, 1 row affected (0.0142 sec)
+ MySQL  localhost:3306 ssl  prueba  SQL > show create database taller1;
++----------+-----------------------------------------------------------------------------------------------------------------------------------+
+| Database | Create Database                                                                                                                   |
++----------+-----------------------------------------------------------------------------------------------------------------------------------+
+| taller1  | CREATE DATABASE `taller1` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */ |
++----------+-----------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.0007 sec)
+ MySQL  localhost:3306 ssl  prueba  SQL > show engines;
++--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
+| Engine             | Support | Comment                                                        | Transactions | XA   | Savepoints |
++--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
+| MEMORY             | YES     | Hash based, stored in memory, useful for temporary tables      | NO           | NO   | NO         |
+| MRG_MYISAM         | YES     | Collection of identical MyISAM tables                          | NO           | NO   | NO         |
+| CSV                | YES     | CSV storage engine                                             | NO           | NO   | NO         |
+| FEDERATED          | NO      | Federated MySQL storage engine                                 | NULL         | NULL | NULL       |
+| PERFORMANCE_SCHEMA | YES     | Performance Schema                                             | NO           | NO   | NO         |
+| MyISAM             | YES     | MyISAM storage engine                                          | NO           | NO   | NO         |
+| InnoDB             | DEFAULT | Supports transactions, row-level locking, and foreign keys     | YES          | YES  | YES        |
+| ndbinfo            | NO      | MySQL Cluster system information storage engine                | NULL         | NULL | NULL       |
+| BLACKHOLE          | YES     | /dev/null storage engine (anything you write to it disappears) | NO           | NO   | NO         |
+| ARCHIVE            | YES     | Archive storage engine                                         | NO           | NO   | NO         |
+| ndbcluster         | NO      | Clustered, fault-tolerant tables                               | NULL         | NULL | NULL       |
++--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
+11 rows in set (0.0007 sec)
+ MySQL  localhost:3306 ssl  prueba  SQL >
